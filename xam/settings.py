@@ -93,11 +93,11 @@ ROOT_URLCONF = 'xam.urls'
 # Python dotted path to the WSGI application used by Django's runserver.
 WSGI_APPLICATION = 'xam.wsgi.application'
 
-TEMPLATE_DIRS = (
-    # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
-    # Always use forward slashes, even on Windows.
-    # Don't forget to use absolute paths, not relative paths.
-)
+TEMPLATE_DIRS = [
+    os.path.join(BASE_DIR, 'templates'),
+    os.path.join(BASE_DIR, 'templates','webanan'),
+    os.path.join(BASE_DIR, 'templates','admin'),
+]
 
 INSTALLED_APPS = (
     'django.contrib.auth',
@@ -115,6 +115,9 @@ INSTALLED_APPS = (
     'tastypie',
     'tastypie_mongoengine',
     'redis_cache',
+
+
+    'functest',
 )
 
 AUTHENTICATION_BACKENDS = (
